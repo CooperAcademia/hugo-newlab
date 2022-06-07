@@ -1,0 +1,8 @@
+{{ range .Data.Pages.GroupByParam "series" }} 
+      <h3>{{ .Key }}</h3>
+      <ul>
+         {{ range sort .Pages "Params.series_no" }}
+            <li><a href="{{ .Permalink }}">{{ .Params.series_no }} - {{ .Title }}</a></li>
+	{{ end }}
+      </ul>
+{{ end }}
