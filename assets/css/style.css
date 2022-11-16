@@ -638,6 +638,11 @@ video {
   background-color: rgb(180 210 211 / var(--tw-bg-opacity));
 }
 
+.bg-softgreen-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(196 251 160 / var(--tw-bg-opacity));
+}
+
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
@@ -665,6 +670,11 @@ video {
   .dark\:bg-lichen-700 {
     --tw-bg-opacity: 1;
     background-color: rgb(61 51 41 / var(--tw-bg-opacity));
+  }
+
+  .dark\:bg-darkviolet-700 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(20 16 24 / var(--tw-bg-opacity));
   }
 
   .dark\:text-softgreen-400 {
