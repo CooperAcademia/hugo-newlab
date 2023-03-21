@@ -1,10 +1,13 @@
-{{ $colset := print (.Get "colour_set" | default "primary") "-colour" }}
 {{/* colour_set can be either primary or secondary */}}
-<div class="flex justify-center {{ $colset }}">
-  <div class="flex-none w-36 h-36">
-  </div>
-  <section class="grow">
-    <div class="text-lg text-center">
+{{ $data := newScratch }}
+{{ $colour_set := (.Get "colour_set" | default "primary") }}
+{{ $data.Set "bgcol" "bg-secondary-200" }}
+{{ if eq $colour_set "primary" }}
+{{ $data.Set "bgcol" "bg-primary-200" }}
+{{end}}
+<div class="justify-center {{ $data.Get "bgcol" }}">
+  <section class="max-w-4xl mx-auto">
+    <div class="text-center">
         {{ if eq .Page.File.Ext "md" }}
           {{ .Inner | markdownify }}
         {{ else }}
@@ -12,6 +15,4 @@
         {{ end }}
     </div>
   </section>
-  <div class="flex-none w-14 h-14">
-  </div>
 </div>

@@ -1,10 +1,16 @@
-<div id="nav-border" class="secondary-colour">
-	<nav id="nav" class="">
-		{{ range .Site.Menus.main }}
-		<a class="nav-link" href="{{ .URL }}">
-			{{ $text := print .Name | safeHTML }}
-			{{ $text }}
-		</a>
-		{{ end }}
-	</nav>
-</div>
+<nav class="flex items-center justify-between flex-wrap bg-primary-900 p-4 sticky top-0">
+  <div class="flex items-center flex-shrink-0 text-white mr-6 space-x-1">
+    <img src="icons/logo.svg" alt="Site logo" class="h-12 w-12">
+    <span class="font-semibold text-xl tracking-tight">CooperAcademia</span>
+  </div>
+  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+    <div class="text-sm lg:flex-grow">
+      {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}" class="block mt-4 lg:inline-block lg:mt-0 text-primary-200 hover:text-white mr-4 nav-link text-lg">
+        {{ $text := print .Name | safeHTML }}
+        {{ $text }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</nav>

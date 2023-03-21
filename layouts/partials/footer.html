@@ -1,12 +1,12 @@
-<footer class="primary-colour flex fixed left-0 bottom-0 w-full h-16
-        text-center align-middle items-center">
-	<div class="flex-none w-14 h-14">
-		<img src="icons/logo.svg" alt="Site logo" class="object-contain">
-	</div>
+<footer class="bg-primary-900 flex fixed left-0 bottom-0 w-full h-10
+        text-center align-middle items-center text-primary-200">
+  <div class="name">
+    Built with <a class="text-secondary-400" href="https://github.com/gohugoio/hugo">Hugo</a> and <a class="text-secondary-400" href="https://tailwindcss.com/">TailwindCSS</a>
+  </div>
 	<div class="grow">
 		<span class="">© {{ now.Format "2006"}} {{ .Site.Title }}</span>
 	</div>
-  <div class="flex-none">
-		<span class="">built by <a href="www.gavincooper.net">Gavin Cooper</a></span>
+  <div class="flex-none p-3">
+		<span class="">built by <a class="text-secondary-400" href="www.gavincooper.net">Gavin Cooper</a></span>
 	</div>
 </footer>
