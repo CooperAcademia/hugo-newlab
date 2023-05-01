@@ -1,10 +1,19 @@
 {{ define "main" }}
-<h1 class="text-center text-primary-300 text-2xl">{{ .Title }}</h1>
+<h1 class="text-center text-primary-950 text-2xl">{{ .Title }}</h1>
 {{ range .Pages.ByPublishDate.Reverse }}
-  <h3 class="text-lg"><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-  <a class="summary" href="{{ .RelPermalink }}">
+  <div class="p-8 border-b-primary-800 border-b-4 mt-4">
+    <span class="pr-4 text-2xl text-primary-950 font-extrabold">
+      <a class="" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </span>
+    <div class="inline-flex">
+    {{ range .Params.tags }}
+      <button class="text-sm bg-secondary-100 text-primary-950 ring-primary-900 mr-4 ring-1 font-bold p-1 rounded-full min-w-[50px]">
+        {{ . }}
+      </button>
+    {{ end }}
+    </div>
     <p>{{ .Summary }}</p>
-  </a>
-  <br></br>
+    <br></br>
+  </div>
 {{ end }}
 {{ end }}

@@ -1,11 +1,16 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-{{ range .Data.Pages.GroupByParam "series" }} 
-      <h3>{{ .Key }}</h3>
-      <ul>
-         {{ range sort .Pages "Params.series_no" }}
-            <li><a href="{{ .Permalink }}">{{ .Params.series_no }} - {{ .Title }}</a></li>
-	{{ end }}
-      </ul>
-{{ end }}
+<h1 class="text-center text-primary-950 text-2xl">{{ .Title }}</h1>
+
+{{ .Scratch.Set "member_label" "staff" }}
+{{ .Scratch.Set "section_header" "Staff Members" }}
+{{ partial "member_section.html" . }}
+
+{{ .Scratch.Set "member_label" "postdoc" }}
+{{ .Scratch.Set "section_header" "Postdoctoral Researchers" }}
+{{ partial "member_section.html" . }}
+
+{{ .Scratch.Set "member_label" "student" }}
+{{ .Scratch.Set "section_header" "RHD Students" }}
+{{ partial "member_section.html" . }}
+
 {{ end }}
