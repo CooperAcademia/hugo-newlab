@@ -1,9 +1,9 @@
 {{ $dateTime := .PublishDate.Format "2006-01-02" }}
 {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
-<time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+<p class="text-primary-700 text-center text-sm">Last Updated <time class="italic" datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time></p>
 {{ with .Params.tags }}
 {{ range . }}
 {{ $href := print (absURL "tags/") (urlize .) }}
-<a class="btn btn-sm btn-outline-dark tag-btn" href="{{ $href }}">{{ . }}</a>
+<a class="text-sm bg-secondary-100 text-primary-950 ring-primary-900 mr-4 ring-1 font-bold p-1 rounded-full min-w-[50px]" href="{{ $href }}">{{ . }}</a>
 {{ end }}
 {{ end }}

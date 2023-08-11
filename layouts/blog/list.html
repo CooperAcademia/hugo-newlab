@@ -7,9 +7,8 @@
     </span>
     <div class="inline-flex">
     {{ range .Params.tags }}
-      <button class="text-sm bg-secondary-100 text-primary-950 ring-primary-900 mr-4 ring-1 font-bold p-1 rounded-full min-w-[50px]">
-        {{ . }}
-      </button>
+      {{ $href := print (absURL "tags/") (urlize .) }}
+      <a class="text-sm bg-secondary-100 text-primary-950 ring-primary-900 mr-4 ring-1 font-bold p-1 rounded-full min-w-[50px]" href="{{ $href }}">{{ . }}</a>
     {{ end }}
     </div>
     <p>{{ .Summary }}</p>
